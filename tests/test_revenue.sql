@@ -20,4 +20,4 @@ with
 
 select *
 from test_that
---where revenue = 0
+where revenue = 0
