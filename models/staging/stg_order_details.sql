@@ -6,3 +6,4 @@ with
 
 select *
 from order_details
+order by order_id
