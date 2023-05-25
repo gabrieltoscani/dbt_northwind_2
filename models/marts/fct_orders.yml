@@ -7,6 +7,4 @@ models:
         - name: order_id
           description: Unique ID for this table
           tests:
-            - unique:
-                column_name: "(order_id || product_id)"
             - not_null
