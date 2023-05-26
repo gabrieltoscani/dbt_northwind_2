@@ -7,7 +7,7 @@ with
             , address
             , city
             , country
-            , 1 as teste
+            , 2 as teste
         from {{source('northwind', 'customers')}}
     )
 
