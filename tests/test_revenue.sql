@@ -1,4 +1,4 @@
-{{ config(error_if = '>10') }}
+
 with 
     orders as (
         select *
@@ -20,4 +20,4 @@ with
 
 select *
 from test_that
-where revenue = 0
+where revenue < 0
