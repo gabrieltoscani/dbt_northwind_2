@@ -1,14 +1,14 @@
 with
     customers as (
         select 
-            customer_id
-            , company_name
-            , contact_name
+            id
+            , companyname
+            , contactname
             , address
             , city
             , country
             , 1 as teste
-        from {{source('northwind', 'customers')}}
+        from {{source('northwind', 'CUSTOMER')}}
     )
 
 select *

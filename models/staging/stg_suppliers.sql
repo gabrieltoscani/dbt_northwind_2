@@ -1,7 +1,7 @@
 with
     products as (
         select *
-        from {{source('northwind', 'suppliers')}}
+        from {{source('northwind', 'SUPPLIER')}}
     )
 
 select *
