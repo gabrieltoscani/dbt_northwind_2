@@ -3,10 +3,10 @@ version: 2
 sources:
   - name: northwind
     description: Data from northwind ERP
-    database: curso-etl-101  
-    schema: erp_northwind  
+    database: northwind  
+    schema: raw_northwind  
     tables:
-      - name: orders
+      - name: _ORDER_
         freshness:
           warn_after:
             count: 5000
@@ -14,33 +14,33 @@ sources:
           error_after:
             count: 10000
             period: day
-        loaded_at_field: cast(order_date as timestamp)
+        loaded_at_field: cast(orderdate as timestamp)
         description: '{{ doc("orders_docs") }}'
         columns:
-          - name: order_id
+          - name: id
             description: Unique ID for this table
             tests:
               - unique
               - not_null
-          - name: customer_id
+          - name: customerid
             tests:
               - relationships:
                   to: source('northwind', 'customers')
-                  field: customer_id
+                  field: id
 
-      - name: customers
+      - name: CUSTOMER
         description: This table lists the customers from ERP Northwind
         columns:
-          - name: customer_id
+          - name: id
             description: Unique ID for this table
-      - name: order_details
-      - name: products
+      - name: ORDERDETAIL
+      - name: PRODUCT
         description: This table lists the products from ERP Northwind
         columns:
-          - name: product_id
+          - name: id
             description: Unique ID for this table
-      - name: suppliers
+      - name: SUPPLIER
         description: This table lists the customers from ERP Northwind
         columns:
-          - name: supplier_id
+          - name: id
             description: Unique ID for this table

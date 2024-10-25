@@ -4,7 +4,7 @@ models:
     - name: fct_orders
       description: '{{ doc("orders_docs") }}'
       columns:
-        - name: order_id
+        - name: id
           description: Unique ID for this table
           tests:
             - not_null

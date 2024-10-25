@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    - name: stg_orders
+      description: '{{ doc("orders_docs") }}'
+      columns:
+        - name: id
+          description: Unique ID for this table
+          tests:
+            - not_null
+            - unique
